@@ -2585,13 +2585,13 @@
     </div>
     <div class="contact-form reveal-right">
       <div class="form-row">
-        <div class="form-group"><label>Tu nombre</label><input type="text" placeholder="Nombre" /></div>
-        <div class="form-group"><label>Teléfono o email</label><input type="text" placeholder="¿Cómo te contacto?" /></div>
+        <div class="form-group"><label>Tu nombre</label><input type="text" id="cf-nombre" placeholder="Nombre" /></div>
+        <div class="form-group"><label>Teléfono o email</label><input type="text" id="cf-contacto" placeholder="¿Cómo te contacto?" /></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Ubicación del alojamiento</label><input type="text" placeholder="Ej: Punta del Diablo" /></div>
+        <div class="form-group"><label>Ubicación del alojamiento</label><input type="text" id="cf-ubicacion" placeholder="Ej: Punta del Diablo" /></div>
         <div class="form-group"><label>Tipo de propiedad</label>
-          <select>
+          <select id="cf-tipo">
             <option>Casa / Cabaña</option>
             <option>Apartamento</option>
             <option>Hotel / Hostería</option>
@@ -2601,10 +2601,11 @@
       </div>
       <div class="form-row">
         <div class="form-group full"><label>Contame sobre tu alojamiento</label>
-          <textarea placeholder="¿Cuántas habitaciones tiene? ¿Está publicado en alguna plataforma? ¿Cuál es la ocupación actual?"></textarea>
+          <textarea id="cf-mensaje" placeholder="¿Cuántas habitaciones tiene? ¿Está publicado en alguna plataforma? ¿Cuál es la ocupación actual?"></textarea>
         </div>
       </div>
-      <button class="form-submit">Enviar consulta</button>
+      <p id="cf-error" style="display:none;color:#c0392b;font-size:0.85rem;margin:0 0 0.5rem"></p>
+      <button class="form-submit" id="cf-submit" type="button">Enviar consulta</button>
     </div>
   </section>
 
@@ -2652,12 +2653,39 @@
       <li><a href="#">Qué ofrezco</a></li>
       <li><a href="#">Cómo funciona</a></li>
       <li><a href="#">Sobre mí</a></li>
-      <li><a href="#">WhatsApp</a></li>
+      <li><a href="https://wa.me/59891733054" target="_blank" rel="noopener">WhatsApp</a></li>
     </ul>
     <span class="footer-copy">© 2026 Orieles Rodríguez · EYO</span>
   </footer>
 
   <script>
+    /* Formulario de contacto -- página estática sin backend, así que el
+       "envío" arma un mensaje de WhatsApp prellenado con lo que la persona
+       cargó y abre wa.me con el número real (mismo que usa hostal.html). */
+    const CONTACT_WHATSAPP = '59891733054';
+    document.getElementById('cf-submit').addEventListener('click', () => {
+      const nombre = document.getElementById('cf-nombre').value.trim();
+      const contacto = document.getElementById('cf-contacto').value.trim();
+      const ubicacion = document.getElementById('cf-ubicacion').value.trim();
+      const tipo = document.getElementById('cf-tipo').value;
+      const mensaje = document.getElementById('cf-mensaje').value.trim();
+      const errorEl = document.getElementById('cf-error');
+
+      if (!nombre || !contacto) {
+        errorEl.textContent = 'Completá al menos tu nombre y cómo contactarte.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      errorEl.style.display = 'none';
+
+      let texto = `Hola Orieles, te escribo desde tu página.\n\nNombre: ${nombre}\nContacto: ${contacto}`;
+      if (ubicacion) texto += `\nUbicación del alojamiento: ${ubicacion}`;
+      texto += `\nTipo de propiedad: ${tipo}`;
+      if (mensaje) texto += `\n\n${mensaje}`;
+
+      window.open(`https://wa.me/${CONTACT_WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank');
+    });
+
     /* Nav scroll */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
