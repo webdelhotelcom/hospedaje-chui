@@ -1,0 +1,20 @@
+# Hospedaje Chui -- https://manuelfestaori-star.github.io/webeyo/
+# No existían restricciones previas en este sitio (robots.txt devolvía 404
+# antes de este archivo) -- no hay ninguna directiva de otro rastreador que
+# conservar. Todo el contenido de este sitio es público (sin panel privado,
+# sin datos de huéspedes ni reservas en el servidor), así que no hace falta
+# ningún Disallow.
+
+# OAI-SearchBot (ChatGPT search) -- permitido explícitamente para que el
+# alojamiento pueda aparecer en las búsquedas de ChatGPT.
+# Referencia: https://developers.openai.com/api/docs/bots
+User-agent: OAI-SearchBot
+Allow: /
+
+# Resto de rastreadores (incluido GPTBot) -- mismo acceso público que ya
+# tenían antes de este archivo. No se agrega ninguna regla propia para
+# GPTBot a propósito: no se cambia la preferencia de uso para entrenamiento.
+User-agent: *
+Allow: /
+
+Sitemap: https://manuelfestaori-star.github.io/webeyo/sitemap.xml

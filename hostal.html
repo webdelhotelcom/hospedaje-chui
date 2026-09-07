@@ -3,26 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EYO HOSTAL — Chuy, Rocha</title>
+<title>Hospedaje Chui — Chuy, Rocha</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<meta name="description" content="EYO HOSTAL ofrece alojamiento en Chuy, Rocha, con habitaciones cómodas, baño privado, aire acondicionado y atención directa por WhatsApp.">
-<link rel="canonical" href="https://manuelfestaori-star.github.io/webeyo/">
+<meta name="description" content="Hospedaje Chui ofrece alojamiento en Chuy, Rocha, con habitaciones cómodas, baño privado, aire acondicionado y atención directa por WhatsApp.">
+<link rel="canonical" href="https://manuelfestaori-star.github.io/webeyo/hostal.html">
 <meta name="theme-color" content="#0f7a38">
-<!-- Favicon editable: reemplazá el href por tu ícono -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23007830'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='15' fill='white' text-anchor='middle' font-weight='bold'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="fotos/logo-hospedaje-chui.png">
 <!-- Open Graph (para WhatsApp / Facebook) -->
 <meta property="og:type" content="business.business">
-<meta property="og:site_name" content="EYO HOSTAL">
-<meta property="og:title" content="EYO HOSTAL — Chuy, Rocha">
+<meta property="og:site_name" content="Hospedaje Chui">
+<meta property="og:title" content="Hospedaje Chui — Chuy, Rocha">
 <meta property="og:description" content="Alojamiento en el centro del Chuy: habitaciones con baño privado, aire acondicionado, estacionamiento y parrillero. Consultá por WhatsApp.">
 <meta property="og:locale" content="es_UY">
-<meta property="og:url" content="https://manuelfestaori-star.github.io/webeyo/">
+<meta property="og:url" content="https://manuelfestaori-star.github.io/webeyo/hostal.html">
 <!-- og:image editable: poné la URL de una foto (1200x630 recomendado) -->
 <meta property="og:image" content="https://manuelfestaori-star.github.io/webeyo/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EYO HOSTAL — Chuy, Rocha">
+<meta name="twitter:title" content="Hospedaje Chui — Chuy, Rocha">
 <meta name="twitter:description" content="Alojamiento en el centro del Chuy. Consultá disponibilidad por WhatsApp.">
 <meta name="twitter:image" content="https://manuelfestaori-star.github.io/webeyo/og-image.jpg">
 <!-- Datos estructurados (solo info comprobada de la web) -->
@@ -30,10 +29,10 @@
 {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
-  "name": "EYO HOSTAL",
+  "name": "Hospedaje Chui",
   "description": "Alojamiento en Chuy, Rocha, con habitaciones cómodas, baño privado y aire acondicionado.",
-  "url": "https://manuelfestaori-star.github.io/webeyo/",
-  "telephone": "+59891733054",
+  "url": "https://manuelfestaori-star.github.io/webeyo/hostal.html",
+  "telephone": "+59898790724",
   "image": "https://manuelfestaori-star.github.io/webeyo/og-image.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -56,20 +55,26 @@
 
 <style>
   :root{
-    --verde-profundo:#0f4d29;
-    --verde:#0f7a38;
-    --verde-claro:#12ab48;
-    --verde-logo:#007830;
-    --verde-vivo:#12ab48;
-    --oro:#0d8a3c;
-    --oro-claro:#bff2cd;
-    --arena:#ffffff;
-    --hueso:#f2f9f3;
-    --mint:#e6f4ea;
+    /* Paleta rediseñada (2026-09-05): mismo verde de marca, pero más profundo y
+       sobrio, con un acento dorado/bronce REAL (antes "--oro" era otro verde,
+       por eso estrellas y eyebrows nunca se leían como acento) y una base
+       cálida en vez de blanco puro -- da la sensación "hotel boutique" en vez
+       de "salud/eco". Los nombres de variable no cambiaron para no romper
+       ninguna regla que ya las use. */
+    --verde-profundo:#0b3820;
+    --verde:#0e6636;
+    --verde-claro:#16813f;
+    --verde-logo:#0e6636;
+    --verde-vivo:#178a45;
+    --oro:#a9782f;
+    --oro-claro:#f2dfb3;
+    --arena:#fffdf9;
+    --hueso:#f5f1e8;
+    --mint:#eef0e6;
     --carbon:#0c2417;
-    --tinta:#274a37;
-    --niebla:#6a8574;
-    --linea:rgba(0,120,48,.18);
+    --tinta:#26301f;
+    --niebla:#6c7562;
+    --linea:rgba(11,56,32,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -120,7 +125,29 @@
     .cotiz{flex-direction:column;gap:.15rem;align-items:flex-end}
     .coin{font-size:.72rem}
   }
-  @media(max-width:760px){.nav-links{display:none}}
+  .nav-toggle{
+    display:none;flex-direction:column;justify-content:center;gap:5px;
+    width:40px;height:40px;border:1px solid var(--linea);border-radius:10px;
+    background:#fff;cursor:pointer;flex:0 0 auto
+  }
+  .nav-toggle span{display:block;width:18px;height:2px;background:var(--verde-profundo);margin:0 auto;transition:transform .2s,opacity .2s}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:760px){
+    .nav-toggle{display:flex;order:3}
+    .nav-links{
+      display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:100%;
+      background:#fff;border-bottom:1px solid var(--linea);box-shadow:0 20px 40px -24px rgba(11,56,32,.35);
+      max-height:0;overflow:hidden;transition:max-height .28s ease;padding:0 min(4vw,1.2rem)
+    }
+    .nav-links.open{max-height:420px;padding:.4rem min(4vw,1.2rem) 1rem}
+    .nav-links a{padding:.85rem .2rem;border-bottom:1px solid var(--linea);font-size:.98rem}
+    .nav-links a:last-child{border-bottom:0}
+    .nav-toggle{order:2}
+    .nav-right{order:3;flex-basis:100%;justify-content:flex-end;margin-top:.5rem}
+    .nav-in{position:relative;flex-wrap:wrap;row-gap:0}
+  }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -147,13 +174,16 @@
   .hero-btns{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.9rem}
   .btn{
     display:inline-flex;align-items:center;gap:.55rem;
-    padding:.85rem 1.5rem;border-radius:999px;font-weight:700;font-size:.95rem;
-    text-decoration:none;cursor:pointer;border:0;transition:transform .2s,background .2s,box-shadow .2s
+    padding:.85rem 1.6rem;border-radius:999px;font-weight:700;font-size:.95rem;
+    text-decoration:none;cursor:pointer;border:0;transition:transform .18s,background .18s,box-shadow .18s
   }
-  .btn-oro{background:var(--verde-vivo);color:#fff;box-shadow:0 8px 24px -10px rgba(18,171,72,.55)}
-  .btn-oro:hover{transform:translateY(-2px);background:var(--verde-logo)}
+  .btn-oro{background:var(--verde-vivo);color:#fff;box-shadow:0 10px 26px -12px rgba(11,56,32,.55)}
+  .btn-oro:hover{transform:translateY(-2px);background:var(--verde-profundo);box-shadow:0 14px 30px -12px rgba(11,56,32,.6)}
+  .btn-oro:active{transform:translateY(0)}
   .btn-ghost{background:#fff;color:var(--verde-profundo);border:1px solid var(--linea)}
-  .btn-ghost:hover{border-color:var(--verde-vivo);color:var(--verde-vivo)}
+  .btn-ghost:hover{border-color:var(--verde-vivo);color:var(--verde-vivo);transform:translateY(-2px)}
+  .btn-link{color:var(--verde-vivo);font-weight:700;text-decoration:none}
+  .btn-link:hover{text-decoration:underline}
   .hero-photo{
     position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;
     border:1px solid var(--linea);
@@ -162,10 +192,16 @@
     display:flex;align-items:center;justify-content:center;text-align:center
   }
   .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo .hero-seal{
+    position:absolute;left:-1.1rem;bottom:-1.1rem;width:96px;height:96px;
+    border-radius:50%;background:#fff;padding:6px;object-fit:contain;
+    box-shadow:0 10px 26px -10px rgba(0,0,0,.35),0 0 0 1px var(--linea);
+  }
   .ph-label{color:rgba(255,255,255,.6);font-size:.85rem;padding:1rem}
   @media(max-width:860px){
     .hero-grid{grid-template-columns:1fr;gap:2rem}
     .hero-photo{aspect-ratio:16/11;order:-1}
+    .hero-photo .hero-seal{width:72px;height:72px;left:.9rem;bottom:-.9rem}
   }
 
   /* ---------- FRANJA DATOS ---------- */
@@ -177,10 +213,11 @@
   @media(max-width:680px){.franja-in{grid-template-columns:repeat(2,1fr)}}
 
   /* ---------- SECCIONES ---------- */
-  section{padding:5rem 0}
-  .sec-head{max-width:56ch;margin-bottom:2.6rem}
-  .sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:.6rem;color:var(--verde-profundo)}
-  .sec-head p{margin-top:.9rem;color:var(--niebla);font-size:1.02rem}
+  section{padding:6.5rem 0}
+  .sec-head{max-width:56ch;margin-bottom:3.2rem}
+  .sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin-top:.7rem;color:var(--verde-profundo);letter-spacing:-.01em}
+  .sec-head p{margin-top:1rem;color:var(--niebla);font-size:1.04rem}
+  @media(max-width:680px){section{padding:4rem 0}}
 
   /* ---------- HABITACIONES ---------- */
   #habitaciones{background:var(--hueso)}
@@ -247,6 +284,48 @@
     cursor:pointer;box-shadow:0 4px 14px -4px rgba(0,0,0,.45);transition:background .2s,transform .2s
   }
   .ver-fotos:hover{background:#fff;transform:translateY(-1px)}
+
+  /* ---------- CALIFICACIÓN POR HABITACIÓN (0-10 estrellitas) ---------- */
+  .rating-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.9rem}
+  .rating-stars{color:var(--niebla);opacity:.35;font-size:.85rem;letter-spacing:.03em;white-space:nowrap}
+  .rating-stars .on{color:var(--oro);opacity:1}
+  .rating-avg{font-family:"Fraunces";font-weight:700;color:var(--verde-profundo);font-size:.95rem}
+  .rating-count{font-size:.78rem;color:var(--niebla)}
+  .rating-badge{
+    font-size:.72rem;font-weight:700;padding:.18rem .55rem;border-radius:999px;
+    color:#fff;letter-spacing:.02em
+  }
+  .rating-badge.r-muymal{background:#a8402f}
+  .rating-badge.r-mal{background:#c17a2e}
+  .rating-badge.r-regular{background:#b7943a}
+  .rating-badge.r-bien{background:#6b9c3f}
+  .rating-badge.r-bueno{background:var(--verde)}
+  .rating-badge.r-genial{background:var(--verde-vivo)}
+  .rating-badge.r-excelente{background:var(--oro)}
+  .rating-empty{font-size:.8rem;color:var(--niebla);font-style:italic}
+  .ver-resenas{
+    background:none;border:0;color:var(--verde-vivo);font-family:inherit;font-size:.78rem;font-weight:700;
+    cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:2px
+  }
+  .ver-resenas:hover{color:var(--verde-profundo)}
+
+  /* ---------- MODAL DE OPINIONES ---------- */
+  .res-modal{position:fixed;inset:0;z-index:100;background:rgba(8,30,18,.7);display:none;align-items:center;justify-content:center;padding:1rem}
+  .res-modal.open{display:flex}
+  .res-panel{background:#fff;border-radius:16px;max-width:520px;width:100%;max-height:82vh;display:flex;flex-direction:column;overflow:hidden}
+  .res-panel-top{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.2rem;border-bottom:1px solid var(--linea)}
+  .res-panel-top h4{font-size:1.05rem;color:var(--verde-profundo)}
+  .res-close{background:none;border:0;font-size:1.4rem;line-height:1;cursor:pointer;color:var(--niebla);padding:.2rem .4rem}
+  .res-close:hover{color:var(--verde-profundo)}
+  .res-list{overflow-y:auto;padding:1rem 1.2rem;display:grid;gap:1rem}
+  .res-item{border-bottom:1px solid var(--linea);padding-bottom:.9rem}
+  .res-item:last-child{border-bottom:0;padding-bottom:0}
+  .res-item-top{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;margin-bottom:.3rem}
+  .res-item-who{font-weight:700;color:var(--verde-profundo);font-size:.92rem}
+  .res-item-fecha{font-size:.72rem;color:var(--niebla)}
+  .res-item-stars{color:var(--oro);opacity:.35;font-size:.78rem;letter-spacing:.02em;margin-bottom:.3rem}
+  .res-item-stars .on{opacity:1}
+  .res-item-comentario{font-size:.88rem;color:var(--tinta);line-height:1.5}
 
   /* ---------- LIGHTBOX / GALERÍA ---------- */
   .lb{position:fixed;inset:0;z-index:100;background:rgba(8,30,18,.94);display:none;flex-direction:column;padding:1rem}
@@ -359,8 +438,16 @@
   .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
   @media(max-width:900px){.cards3{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:600px){.cards3{grid-template-columns:1fr}}
-  .ucard{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.5rem}
+  .ucard{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:1.4rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .25s,box-shadow .25s}
+  .ucard:hover{transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(11,56,32,.4)}
   .ucard .stars{color:var(--oro);font-size:1rem;letter-spacing:.08em}
+  .trust-strip{
+    display:flex;align-items:center;justify-content:center;gap:.7rem;flex-wrap:wrap;
+    margin-bottom:2rem;font-size:.95rem;color:var(--niebla)
+  }
+  .trust-score{font-family:"Fraunces";font-weight:700;font-size:1.7rem;color:var(--verde-profundo)}
+  .trust-stars{color:var(--oro);letter-spacing:.1em;font-size:1.1rem}
+  .trust-count{font-weight:600}
   .ucard .quote{color:var(--tinta);font-size:.95rem;line-height:1.55;flex:1}
   .ucard .who{font-weight:700;color:var(--verde-profundo)}
   .ucard .plat{font-size:.75rem;color:var(--niebla);text-transform:uppercase;letter-spacing:.06em}
@@ -421,7 +508,6 @@
 
 
   @media(max-width:600px){
-    .nav-in{flex-wrap:nowrap}
     .nav-right{gap:.45rem}
     #navReservar{display:none}
     .cotiz{font-size:.68rem;gap:.4rem}
@@ -431,6 +517,46 @@
 </style>
 </head>
 <body>
+
+<!-- CONTENIDO ACCESIBLE SIN JAVASCRIPT -- las habitaciones, precios y
+     servicios de más abajo se arman en tiempo de ejecución (renderRooms()/
+     renderServicios(), a partir de los arrays HABITACIONES/SERVICIOS) --
+     un rastreador que solo lee el HTML devuelto por el servidor, sin
+     ejecutar JS, no vería nada de esa sección. Este bloque nunca se
+     muestra a un visitante normal (con JS activado desaparece por completo,
+     comportamiento estándar de <noscript>) -- existe solo para que ese
+     contenido esté disponible como texto plano. Si se agrega, saca o
+     cambia el precio/capacidad de una habitación en HABITACIONES, hay que
+     reflejarlo acá también -- no se genera solo. -->
+<noscript>
+  <main style="max-width:700px;margin:2rem auto;padding:0 1.2rem;font-family:Arial,sans-serif;line-height:1.6;color:#1a2e22">
+    <h1>Hospedaje Chui — Chuy, Rocha, Uruguay</h1>
+    <p>Alojamiento en el centro del Chuy, a 100 metros de los free shops y comercios. Seis habitaciones con baño privado (salvo donde se indica), aire acondicionado, cocina equipada y estacionamiento privado incluido.</p>
+    <h2>Ubicación</h2>
+    <p>Laguna de los Patos 169, Chuy, Rocha, Uruguay.</p>
+    <h2>Habitaciones</h2>
+    <ul>
+      <li><strong>Dac</strong> — hasta 2 personas, desde $1.640 la noche, baño privado.</li>
+      <li><strong>Grande</strong> — hasta 3 personas, desde $1.850 la noche, baño privado.</li>
+      <li><strong>Medio</strong> — hasta 2 personas, desde $1.850 la noche, baño privado.</li>
+      <li><strong>Nueva</strong> — hasta 3 personas, desde $1.850 la noche, baño privado.</li>
+      <li><strong>Zulmira</strong> — hasta 4 personas, desde $1.850 la noche, baño privado (se accede subiendo una escalera).</li>
+      <li><strong>Emiliano</strong> — hasta 2 personas, desde $1.300 la noche, baño privado, sin aire acondicionado.</li>
+    </ul>
+    <h2>Servicios</h2>
+    <ul>
+      <li>Wi-Fi en todas las habitaciones y zonas comunes</li>
+      <li>Aire acondicionado (excepto en Emiliano)</li>
+      <li>Estacionamiento privado incluido</li>
+      <li>Cocina equipada (heladera, microondas, tostadora)</li>
+      <li>Parrillero</li>
+      <li>Ropa de cama y toallas incluidas</li>
+      <li>Recepción personal</li>
+    </ul>
+    <h2>Contacto</h2>
+    <p>WhatsApp: +598 98 790 724<br>Dirección: Laguna de los Patos 169, Chuy, Rocha, Uruguay</p>
+  </main>
+</noscript>
 
 <!-- LIGHTBOX / GALERÍA DE FOTOS -->
 <div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de fotos">
@@ -446,21 +572,35 @@
   <div class="lb-thumbs" id="lbThumbs"></div>
 </div>
 
+<!-- MODAL DE OPINIONES POR HABITACIÓN -->
+<div class="res-modal" id="resModal" role="dialog" aria-modal="true" aria-label="Opiniones de la habitación">
+  <div class="res-panel">
+    <div class="res-panel-top">
+      <h4 id="resTitulo"></h4>
+      <button class="res-close" onclick="cerrarResenas()" aria-label="Cerrar">×</button>
+    </div>
+    <div class="res-list" id="resLista"></div>
+  </div>
+</div>
 
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#" class="brand" aria-label="EYO">
-      <img src="fotos/img-001.jpg" alt="Apartamentos EYO" class="brand-logo">
-      <span>EYO <small>Alojamientos</small></span>
+    <a href="#" class="brand" aria-label="Hospedaje Chui">
+      <img src="fotos/logo-hospedaje-chui.png" alt="Hospedaje Chui" class="brand-logo">
+      <span>Hospedaje <small>Chui</small></span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="#habitaciones" data-i18n="nav_hab">Habitaciones</a>
       <a href="#servicios" data-i18n="nav_serv">Servicios</a>
       <a href="#promos" data-i18n="nav_promos">Promociones</a>
+      <a href="#opiniones" data-i18n="nav_op">Opiniones</a>
       <a href="#faq" data-i18n="nav_faq">Preguntas</a>
       <a href="#contacto" data-i18n="nav_cont">Contacto</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Idioma / Idioma">
         <button type="button" id="langEs" class="on" onclick="setLang('es')">ES</button>
@@ -512,7 +652,8 @@
       </div>
     </div>
     <div class="hero-photo" id="heroPhoto">
-      <img src="fotos/img-001.jpg" alt="Apartamentos EYO en Chuy" style="width:auto;height:auto;max-width:78%;max-height:78%;object-fit:contain;border-radius:50%;box-shadow:0 20px 50px -20px rgba(0,0,0,.5)">
+      <img src="fotos/grande-01.jpg" alt="Una de las habitaciones de Hospedaje Chui, en el centro del Chuy" loading="eager" fetchpriority="high">
+      <img class="hero-seal" src="fotos/logo-hospedaje-chui.png" alt="" aria-hidden="true">
     </div>
   </div>
 </section>
@@ -546,7 +687,7 @@
     <div class="sec-head">
       <span class="eyebrow" data-i18n="serv_eye">Todo incluido en tu estadía</span>
       <h2 data-i18n="serv_h2">Servicios del hostal</h2>
-      <p data-i18n="serv_p">Lo que hace que quedarte en EYO sea fácil y cómodo, desde que llegás hasta que te vas.</p>
+      <p data-i18n="serv_p">Lo que hace que quedarte en Hospedaje Chui sea fácil y cómodo, desde que llegás hasta que te vas.</p>
     </div>
     <div class="serv-grid" id="servGrid"></div>
   </div>
@@ -616,17 +757,10 @@
       <div class="info-card">
         <h3 data-i18n="i_llegar">Cómo llegar</h3>
         <div class="info-row"><span>Dirección</span><span>Laguna de los Patos, N.º 169</span></div>
-        <div class="info-row"><span>Google Maps</span><span>«Alojamiento EYO»</span></div>
+        <div class="info-row"><span>Google Maps</span><span>«Hospedaje Chui»</span></div>
         <div class="info-row"><span>También figura</span><span>Escuela Gastón Arismon 169</span></div>
         <div class="info-row"><span>Referencia</span><span>Portón azul junto a la Junta de Chuy</span></div>
-        <div class="map-embed" style="margin-top:1.2rem">
-          <iframe
-            title="Ubicación EYO Hostal en Chuy"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Alojamiento%20EYO%20Chuy%20Rocha%20Uruguay&output=embed">
-          </iframe>
-        </div>
+        <p class="nota" style="margin-top:1rem"><a class="btn-link" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Hospedaje%20Chui%20Chuy%20Rocha%20Uruguay">Ver el mapa completo y los lugares cercanos ↓</a></p>
       </div>
     </div>
   </div>
@@ -640,9 +774,13 @@
     <div class="sec-head">
       <span class="eyebrow" data-i18n="op_eye">Confianza</span>
       <h2 data-i18n="op_h2">Lo que dicen nuestros huéspedes</h2>
-      <p data-i18n="op_p">Opiniones reales de quienes ya se alojaron en EYO. (Reemplazá los textos por reseñas verdaderas.)</p>
+      <p data-i18n="op_p">Opiniones reales de huéspedes en Google.</p>
     </div>
-    <!-- EDITABLE: reemplazá nombre, puntuación, comentario y plataforma de cada tarjeta -->
+    <div class="trust-strip">
+      <span class="trust-score">4.8</span>
+      <span class="trust-stars" aria-hidden="true">★★★★★</span>
+      <span class="trust-count" data-i18n="op_count">Basado en opiniones reales de Google</span>
+    </div>
     <div class="cards3">
       <div class="ucard">
         <div class="stars">★★★★★ <span class="plat">Google</span></div>
@@ -676,9 +814,10 @@
       </div>
     </div>
     <div class="center-btns">
-      <!-- EDITABLE: reemplazá href="#" por el enlace real de Google y Booking -->
       <a class="btn btn-oro" id="lnkGoogle" href="https://www.google.com/maps/place/?q=place_id:ChIJmSvGth_fDJUR0_lbNgD7yQM" target="_blank" rel="noopener" data-i18n="op_google">Ver opiniones en Google</a>
-      <a class="btn btn-ghost" id="lnkBooking" href="#" target="_blank" rel="noopener" data-i18n="op_booking">Ver opiniones en Booking</a>
+      <!-- Botón "Ver opiniones en Booking" retirado (2026-09-05): no había un link real
+           de Booking todavía (href="#"), y un botón que no hace nada resta confianza.
+           Volvé a agregarlo con id="lnkBooking" cuando tengas la URL real del listado. -->
     </div>
   </div>
 </section>
@@ -698,19 +837,19 @@
     <div class="sec-head">
       <span class="eyebrow" data-i18n="pr_eye">Ofertas</span>
       <h2 data-i18n="pr_h2">Promociones y estadías especiales</h2>
-      <p data-i18n="pr_p">Sujetas a disponibilidad. (Completá los valores; no hay porcentajes cargados.)</p>
+      <p data-i18n="pr_p">Tarifas especiales según temporada y duración de tu estadía. Consultanos por WhatsApp.</p>
     </div>
     <div class="cards3">
       <div class="ucard promo">
         <h4 data-i18n="pr1_t">Tarifa especial entre semana</h4>
         <p class="quote" data-i18n="pr1_d">Mejor precio de domingo a jueves.</p>
-        <p class="cond" data-i18n="pr1_c">Condiciones: [a completar]. Sujeto a disponibilidad.</p>
+        <p class="cond" data-i18n="pr1_c">Consultanos las condiciones vigentes por WhatsApp.</p>
         <a class="btn btn-oro wa-link" data-k="promo1" href="#" data-i18n="pr_btn">Consultar</a>
       </div>
       <div class="ucard promo">
         <h4 data-i18n="pr2_t">3 noches o más</h4>
         <p class="quote" data-i18n="pr2_d">Descuento por estadías largas.</p>
-        <p class="cond" data-i18n="pr2_c">Condiciones: [a completar]. Sujeto a disponibilidad.</p>
+        <p class="cond" data-i18n="pr2_c">Consultanos las condiciones vigentes por WhatsApp.</p>
         <a class="btn btn-oro wa-link" data-k="promo2" href="#" data-i18n="pr_btn">Consultar</a>
       </div>
     </div>
@@ -722,7 +861,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" data-i18n="ce_eye">Ubicación</span>
-      <h2 data-i18n="ce_h2">Descubrí Chuy desde EYO HOSTAL</h2>
+      <h2 data-i18n="ce_h2">Descubrí Chuy desde Hospedaje Chui</h2>
       <p data-i18n="ce_p">Todo lo importante del Chuy, a pocos pasos.</p>
     </div>
     <div class="cards3">
@@ -734,10 +873,10 @@
       <div class="ucard lugar"><div class="lugar-foto"><span class="lugar-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 8h13l-3-3M20 16H7l3 3"/><path d="M11 11h2"/></svg></span></div><div class="who" data-i18n="ce6_t"></div><p class="quote" data-i18n="ce6_d"></p><span class="dist">≈ 200 m · 3 min 🚶</span><a href="https://www.google.com/maps/search/casa+de+cambio+Av+Brasil+Chuy" target="_blank" rel="noopener" style="font-size:.78rem;color:var(--verde-vivo);text-decoration:none;margin-top:.2rem">📍 <span data-i18n="ce_vermaps">Ver en Maps</span></a></div>
     </div>
     <div class="center-btns">
-      <a class="btn btn-oro" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Alojamiento%20EYO%20Chuy%20Rocha%20Uruguay" data-i18n="ce_maps">Abrir en Google Maps</a>
+      <a class="btn btn-oro" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Hospedaje%20Chui%20Chuy%20Rocha%20Uruguay" data-i18n="ce_maps">Abrir en Google Maps</a>
     </div>
     <div class="cerca-map">
-      <iframe title="Mapa EYO HOSTAL Chuy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Alojamiento%20EYO%20en%20Chuy%20con%20Ba%C3%B1o%20Privado&z=16&output=embed"></iframe>
+      <iframe title="Mapa Hospedaje Chui Chuy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Hospedaje%20Chui%20en%20Chuy%20con%20Ba%C3%B1o%20Privado&z=16&output=embed"></iframe>
     </div>
   </div>
 </section>
@@ -785,15 +924,14 @@
       <div class="cont-datos">
         <div>📍 Laguna de los Patos 169, Chuy, Rocha</div>
         <div>📱 WhatsApp: <a id="waLink" href="#" data-i18n="cont_escribinos">Escribinos</a></div>
-        <div>✉️ <a href="mailto:eyo@example.com">eyo@example.com</a> <span style="opacity:.6">(editable)</span></div>
-        <div>🗺️ <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Alojamiento%20EYO%20Chuy%20Rocha%20Uruguay" data-i18n="cont_maps">Ver en Google Maps</a></div>
-        <div>📷 Instagram: <a href="https://instagram.com/alojamientoeyo" target="_blank" rel="noopener">@alojamientoeyo</a></div>
+        <div>🗺️ <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Hospedaje%20Chui%20Chuy%20Rocha%20Uruguay" data-i18n="cont_maps">Ver en Google Maps</a></div>
+        <div>📷 Instagram: <a href="https://instagram.com/hospedajechui" target="_blank" rel="noopener">@hospedajechui</a></div>
       </div>
     </div>
     <div class="form">
       <div class="two">
-        <div class="field"><label for="fNombre" data-i18n="f_nombre">Nombre *</label><input id="fNombre" type="text" required></div>
-        <div class="field"><label for="fPersonas" data-i18n="f_personas">Huéspedes</label><input id="fPersonas" type="number" min="1" value="2"></div>
+        <div class="field"><label for="fNombre" data-i18n="f_nombre">Nombre *</label><input id="fNombre" type="text" autocomplete="name" placeholder="¿Cómo te llamás?" required></div>
+        <div class="field"><label for="fPersonas" data-i18n="f_personas">Huéspedes</label><input id="fPersonas" type="number" min="1" value="2" inputmode="numeric"></div>
       </div>
       <div class="two">
         <div class="field"><label for="fIn" data-i18n="f_in">Llegada</label><input id="fIn" type="date"></div>
@@ -803,7 +941,7 @@
         <label for="fHab" data-i18n="f_hab">Habitación de interés</label>
         <select id="fHab"><option value="Cualquiera" data-i18n="f_cualquiera">Cualquiera / no sé todavía</option></select>
       </div>
-      <div class="field"><label for="fMsg" data-i18n="f_msg">Mensaje</label><textarea id="fMsg"></textarea></div>
+      <div class="field"><label for="fMsg" data-i18n="f_msg">Mensaje</label><textarea id="fMsg" placeholder="Contanos algo más si querés (opcional)"></textarea></div>
       <div id="formErr" role="alert" style="display:none;color:#b23b3b;font-size:.85rem;margin-bottom:.6rem"></div>
       <button class="btn btn-oro" id="enviarWhats" data-i18n="f_btn">Enviar consulta por WhatsApp →</button>
     </div>
@@ -814,14 +952,13 @@
 <footer>
   <div class="wrap">
     <div class="foot-in" style="border:0;margin-bottom:1.4rem">
-    <div class="brand"><img src="fotos/img-001.jpg" alt="EYO" class="brand-logo"><span>EYO <small>Alojamientos</small></span></div>
+    <div class="brand"><img src="fotos/logo-hospedaje-chui.png" alt="Hospedaje Chui" class="brand-logo"><span>Hospedaje <small>Chui</small></span></div>
     </div>
     <div class="foot-cols">
       <div>
-        <h5>EYO HOSTAL</h5>
+        <h5>Hospedaje Chui</h5>
         <p>📍 Laguna de los Patos 169, Chuy, Rocha, Uruguay<br>
-        📱 WhatsApp: <a id="waFoot" href="#">+598 91 733 054</a><br>
-        ✉️ <a href="mailto:eyo@example.com">eyo@example.com</a> <span style="opacity:.6">(editable)</span></p>
+        📱 WhatsApp: <a id="waFoot" href="#">+598 98 790 724</a></p>
       </div>
       <div>
         <h5 data-i18n="foot_nav">Navegación</h5>
@@ -832,14 +969,13 @@
       </div>
       <div>
         <h5 data-i18n="foot_links">Enlaces</h5>
-        <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Alojamiento%20EYO%20Chuy%20Rocha%20Uruguay" data-i18n="cont_maps">Google Maps</a>
-        <!-- EDITABLE: reemplazá href="#" -->
-        <a href="#" target="_blank" rel="noopener">Google</a>
-        <a href="#" target="_blank" rel="noopener">Booking</a>
-        <a href="https://instagram.com/alojamientoeyo" target="_blank" rel="noopener">Instagram</a>
+        <a target="_blank" rel="noopener" href="https://www.google.com/maps?q=Hospedaje%20Chui%20Chuy%20Rocha%20Uruguay" data-i18n="cont_maps">Google Maps</a>
+        <a target="_blank" rel="noopener" href="https://www.google.com/maps/place/?q=place_id:ChIJmSvGth_fDJUR0_lbNgD7yQM">Reseñas en Google</a>
+        <a href="https://instagram.com/hospedajechui" target="_blank" rel="noopener">Instagram</a>
+        <!-- Booking: agregar acá el link real del listado cuando esté disponible. -->
       </div>
     </div>
-    <div class="foot-bottom">© <span id="year">2026</span> EYO HOSTAL · Chuy, Rocha, Uruguay · <span data-i18n="foot_rights">Todos los derechos reservados</span></div>
+    <div class="foot-bottom">© <span id="year">2026</span> Hospedaje Chui · Chuy, Rocha, Uruguay · <span data-i18n="foot_rights">Todos los derechos reservados</span></div>
   </div>
 </footer>
 
@@ -854,8 +990,8 @@
    ===================================================================== */
 const CONFIG = {
   // Número de WhatsApp con código de país, SOLO números. Uruguay = 598
-  whatsapp: "59891733054",   // ← PONÉ TU NÚMERO
-  nombre: "EYO Hostal",
+  whatsapp: "59898790724",   // ← PONÉ TU NÚMERO
+  nombre: "Hospedaje Chui",
   // Cotización en pesos uruguayos (editá cuando cambie)
   cotizacion: { real: "6,95", dolar: "41" }
 };
@@ -880,6 +1016,20 @@ const EQUIP_HAB = [
               Si la dejás vacía [] se muestra un placeholder.
    - "precio": número por noche. Si querés un RANGO, agregá "precioMax".
    - "extras": comodidades propias de esa habitación (además del equipo común).
+   - "resenas": opiniones reales de huéspedes de ESA habitación puntual (0 a
+     10 estrellitas cada una). Arranca vacía [] a propósito -- nunca se
+     inventa una opinión ni un puntaje. Para cargar una real, agregá un
+     objeto así dentro del array:
+       { nombre:"Juan", estrellas:9, comentario:"Todo excelente, volvería.", fecha:"2026-09" }
+     El promedio, la cantidad y la calificación (Muy mal/Mal/Regular/Bien/
+     Bueno/Genial/Excelente) se calculan solos a partir de estos datos.
+   - "calificacionPropia": un puntaje de 0 a 10 que EL PROPIO ALOJAMIENTO le
+     asigna a la habitación (para orientar a quien mira la página sobre
+     cuál es la más linda), NO una opinión de huésped real -- por eso se
+     muestra con el rótulo "Calificación del alojamiento", nunca como
+     "(N opiniones)" ni con botón "Ver opiniones" (no hay ninguna reseña
+     individual detrás). En cuanto una habitación tenga su primera opinión
+     real en "resenas", esa pasa a mostrarse en su lugar automáticamente.
    ===================================================================== */
 const HABITACIONES = [
   {
@@ -887,6 +1037,7 @@ const HABITACIONES = [
     moneda:"$",
     capacidad:2, camas:"1 cama de plaza y media", bano:"privado",
     tarifas:[ {personas:2, desde:1640, hasta:1800} ],
+    calificacionPropia:8,
     extras:[],
     fotos:[
       "fotos/img-002.jpg",
@@ -906,13 +1057,15 @@ const HABITACIONES = [
       "fotos/img-016.jpg",
       "fotos/img-017.jpg",
       "fotos/img-018.jpg",
-    ]
+    ],
+    resenas:[]
   },
   {
     nombre:"Grande",
     moneda:"$",
     capacidad:3, camas:"1 cama de 2 plazas + 1 cama de 1 plaza", bano:"privado",
     tarifas:[ {personas:2, desde:1850, hasta:2100}, {personas:3, desde:2000, hasta:2250} ],
+    calificacionPropia:8,
     extras:[],
     fotos:[
       "fotos/grande-01.jpg",
@@ -930,13 +1083,15 @@ const HABITACIONES = [
       "fotos/grande-13.jpg",
       "fotos/grande-14.jpg",
       "fotos/grande-15.jpg",
-    ]
+    ],
+    resenas:[]
   },
   {
     nombre:"Medio",
     moneda:"$",
     capacidad:2, camas:"1 cama de 2 plazas", bano:"privado",
     tarifas:[ {personas:2, desde:1850, hasta:2050} ],
+    calificacionPropia:8,
     extras:["Calefón a gas"], quitar:["Calefón eléctrico"],
     fotos:[
       "fotos/medio-01.jpg",
@@ -946,13 +1101,15 @@ const HABITACIONES = [
       "fotos/medio-05.jpg",
       "fotos/medio-06.jpg",
       "fotos/medio-07.jpg",
-    ]
+    ],
+    resenas:[]
   },
   {
     nombre:"Nueva",
     moneda:"$",
     capacidad:3, camas:"1 cama de 2 plazas + 1 sillón cama", bano:"privado",
     tarifas:[ {personas:2, desde:1850, hasta:2130}, {personas:3, desde:2000, hasta:2250} ],
+    calificacionPropia:9,
     extras:["A estrenar"],
     fotos:[
       "fotos/img-033.jpg",
@@ -975,13 +1132,15 @@ const HABITACIONES = [
       "fotos/img-050.jpg",
       "fotos/img-051.jpg",
       "fotos/img-052.jpg",
-    ]
+    ],
+    resenas:[]
   },
   {
     nombre:"Zulmira",
     moneda:"$",
     capacidad:4, camas:"1 cama de 2 plazas + 1 sillón cama de 2 plazas", bano:"privado",
     tarifas:[ {personas:2, desde:1850, hasta:2130}, {personas:3, desde:2000, hasta:2250}, {personas:4, desde:2250, hasta:2450} ],
+    calificacionPropia:8.5,
     aviso:"Se accede subiendo una escalera",
     extras:[],
     fotos:[
@@ -995,15 +1154,35 @@ const HABITACIONES = [
       "fotos/img-060.jpg",
       "fotos/img-061.jpg",
       "fotos/img-062.jpg",
-    ]
+    ],
+    resenas:[]
   },
   {
     nombre:"Emiliano",
     moneda:"$",
-    capacidad:2, camas:"1 cama de plaza y media", bano:"compartido",
+    capacidad:2, camas:"1 cama de plaza y media", bano:"privado",
     tarifas:[ {personas:1, desde:1300}, {personas:2, desde:1640} ],
-    extras:[],
-    fotos:[]
+    calificacionPropia:8,
+    aviso:"El precio puede ser menor según el horario de ingreso — consultar por WhatsApp",
+    extras:[], quitar:["Aire acondicionado"],
+    fotos:[
+      "fotos/emiliano-13.jpg",
+      "fotos/emiliano-01.jpg",
+      "fotos/emiliano-02.jpg",
+      "fotos/emiliano-03.jpg",
+      "fotos/emiliano-04.jpg",
+      "fotos/emiliano-05.jpg",
+      "fotos/emiliano-06.jpg",
+      "fotos/emiliano-07.jpg",
+      "fotos/emiliano-08.jpg",
+      "fotos/emiliano-09.jpg",
+      "fotos/emiliano-10.jpg",
+      "fotos/emiliano-11.jpg",
+      "fotos/emiliano-12.jpg",
+      "fotos/emiliano-14.jpg",
+      "fotos/emiliano-15.jpg",
+    ],
+    resenas:[]
   }
 ];
 
@@ -1025,6 +1204,35 @@ const SERVICIOS = [
 const waNum = CONFIG.whatsapp;
 const waBase = "https://wa.me/" + waNum + "?text=";
 
+// ---------- Calificación 0-10 por habitación (a partir de "resenas") ----------
+// Umbrales: <3 Muy mal, <5 Mal, <6 Regular, <7 Bien, <8 Bueno, <9 Genial, >=9 Excelente.
+const RATING_TIERS = [
+  {max:3, key:"muymal", clase:"r-muymal"},
+  {max:5, key:"mal", clase:"r-mal"},
+  {max:6, key:"regular", clase:"r-regular"},
+  {max:7, key:"bien", clase:"r-bien"},
+  {max:8, key:"bueno", clase:"r-bueno"},
+  {max:9, key:"genial", clase:"r-genial"},
+  {max:Infinity, key:"excelente", clase:"r-excelente"}
+];
+function tierForAvg(avg){
+  return RATING_TIERS.find(tr => avg < tr.max) || RATING_TIERS[RATING_TIERS.length-1];
+}
+function calcularRating(resenas){
+  const list = resenas || [];
+  if(!list.length) return {count:0};
+  const suma = list.reduce((a,r) => a + r.estrellas, 0);
+  const avg = suma / list.length;
+  const tier = tierForAvg(avg);
+  return {count:list.length, avg, tierKey:tier.key, tierClase:tier.clase};
+}
+function renderEstrellas(avg){
+  const llenas = Math.round(avg);
+  let out = "";
+  for(let i=1;i<=10;i++) out += `<span class="${i<=llenas?"on":""}">★</span>`;
+  return out;
+}
+
 // Render habitaciones
 const grid = document.getElementById("roomsGrid");
 const selectHab = document.getElementById("fHab");
@@ -1036,7 +1244,7 @@ function renderRooms(){
   HABITACIONES.forEach((h, idx) => {
   const fotos = h.fotos || [];
   const foto = fotos.length
-    ? `<img src="${fotos[0]}" alt="${t('r_alt')} ${h.nombre}, EYO HOSTAL Chuy" width="640" height="480" loading="${idx===0?'eager':'lazy'}" ${idx===0?'fetchpriority="high"':''}>`
+    ? `<img src="${fotos[0]}" alt="${t('r_alt')} ${h.nombre}, Hospedaje Chui Chuy" width="640" height="480" loading="${idx===0?'eager':'lazy'}" ${idx===0?'fetchpriority="high"':''}>`
     : `<span class="ph-label">${t('r_foto')}<br>«${h.nombre}»</span>`;
 
   const btnFotos = fotos.length
@@ -1060,6 +1268,31 @@ function renderRooms(){
   const AVMAP = {pt:AVISO_PT, en:AVISO_EN};
   const avisoHtml = h.aviso ? `<div class="room-aviso">⚠️ ${(AVMAP[LANG] && AVMAP[LANG][h.aviso]) || h.aviso}</div>` : "";
 
+  const rating = calcularRating(h.resenas);
+  let ratingHtml;
+  if(rating.count > 0){
+    ratingHtml = `<div class="rating-row">
+        <span class="rating-stars">${renderEstrellas(rating.avg)}</span>
+        <span class="rating-avg">${rating.avg.toFixed(1)}/10</span>
+        <span class="rating-badge ${rating.tierClase}">${t('res_'+rating.tierKey)}</span>
+        <span class="rating-count">(${rating.count} ${rating.count===1?t('res_op_sing'):t('res_op_pl')})</span>
+        <button class="ver-resenas" onclick="abrirResenas(${idx})">${t('res_ver')}</button>
+      </div>`;
+  } else if(h.calificacionPropia != null){
+    // Calificación asignada por el alojamiento (no son opiniones de huéspedes
+    // reales todavía) -- por eso NUNCA se le pone "(N opiniones)" ni botón
+    // "Ver opiniones": no hay ninguna reseña individual que mostrar.
+    const tierP = tierForAvg(h.calificacionPropia);
+    ratingHtml = `<div class="rating-row">
+        <span class="rating-stars">${renderEstrellas(h.calificacionPropia)}</span>
+        <span class="rating-avg">${h.calificacionPropia.toFixed(1)}/10</span>
+        <span class="rating-badge ${tierP.clase}">${t('res_'+tierP.key)}</span>
+        <span class="rating-count">${t('res_propia')}</span>
+      </div>`;
+  } else {
+    ratingHtml = `<div class="rating-row"><span class="rating-empty">${t('res_sin')}</span></div>`;
+  }
+
   const capTxt = h.capacidad === 1 ? t('r_1p') : `${t('r_upto')} ${h.capacidad} ${t('r_pers')}`;
   const banoTxt = t('r_bath') + " " + (h.bano === 'privado' ? t('r_priv') : t('r_shared'));
   const msg = encodeURIComponent(t('wa_room').replace('{r}', h.nombre));
@@ -1073,6 +1306,7 @@ function renderRooms(){
       </div>
       <div class="room-body">
         <h3>${h.nombre}</h3>
+        ${ratingHtml}
         <div class="room-price"><span class="amt">${precioTxt}</span><span class="per">/ ${t('r_night')}</span></div>
         <ul class="tarifas">${tarifasHtml}</ul>
         ${avisoHtml}
@@ -1139,6 +1373,46 @@ function mostrarFoto(i){
 }
 function navGaleria(d){ mostrarFoto(lbIdx + d); }
 function cerrarGaleria(){ lb.classList.remove("open"); document.body.style.overflow=""; }
+
+// ---------- Opiniones por habitación ----------
+const resModal = document.getElementById("resModal");
+function abrirResenas(roomIdx){
+  const h = HABITACIONES[roomIdx];
+  if(!h) return;
+  const resenas = h.resenas || [];
+  document.getElementById("resTitulo").textContent = t('res_titulo').replace('{r}', h.nombre);
+  document.getElementById("resLista").innerHTML = resenas.length
+    ? resenas.map(r => `
+        <div class="res-item">
+          <div class="res-item-top">
+            <span class="res-item-who">${r.nombre}</span>
+            ${r.fecha ? `<span class="res-item-fecha">${r.fecha}</span>` : ""}
+          </div>
+          <div class="res-item-stars">${renderEstrellas(r.estrellas)}</div>
+          <div class="res-item-comentario">${r.comentario}</div>
+        </div>
+      `).join("")
+    : `<p class="rating-empty">${t('res_sin')}</p>`;
+  resModal.classList.add("open"); document.body.style.overflow="hidden";
+}
+function cerrarResenas(){ resModal.classList.remove("open"); document.body.style.overflow=""; }
+resModal.addEventListener("click", e=>{ if(e.target===resModal) cerrarResenas(); });
+document.addEventListener("keydown", e=>{ if(resModal.classList.contains("open") && e.key==="Escape") cerrarResenas(); });
+
+// Menú mobile (hamburguesa) -- antes .nav-links solo se ocultaba en mobile
+// sin ninguna forma de abrirlo, dejando la navegación inaccesible en celular.
+(function(){
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if(!toggle || !links) return;
+  function cerrarMenu(){ links.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); }
+  toggle.addEventListener("click", () => {
+    const abierto = links.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", abierto ? "true" : "false");
+  });
+  links.querySelectorAll("a").forEach(a => a.addEventListener("click", cerrarMenu));
+  document.addEventListener("keydown", e => { if(e.key === "Escape") cerrarMenu(); });
+})();
 lb.addEventListener("click", e=>{ if(e.target===lb) cerrarGaleria(); });
 document.addEventListener("keydown", e=>{
   if(!lb.classList.contains("open")) return;
@@ -1182,8 +1456,14 @@ const EQUIP_MAP_EN = {
   "Calefón eléctrico":"Electric water heater","Calefón a gas":"Gas water heater","Vajilla completa":"Full tableware",
   "Elementos de cocina":"Kitchen utensils","Toallas":"Towels","Ropa de cama":"Bed linen","A estrenar":"Brand new"
 };
-const AVISO_PT = { "Se accede subiendo una escalera":"Acesso subindo uma escada" };
-const AVISO_EN = { "Se accede subiendo una escalera":"Accessed by going up a staircase" };
+const AVISO_PT = {
+  "Se accede subiendo una escalera":"Acesso subindo uma escada",
+  "El precio puede ser menor según el horario de ingreso — consultar por WhatsApp":"O preço pode ser menor dependendo do horário de chegada — consulte pelo WhatsApp"
+};
+const AVISO_EN = {
+  "Se accede subiendo una escalera":"Accessed by going up a staircase",
+  "El precio puede ser menor según el horario de ingreso — consultar por WhatsApp":"The price may be lower depending on your arrival time — ask us on WhatsApp"
+};
 const SERV_PT = [
   {t:"Wi-Fi", d:"Internet em todos os quartos e áreas comuns."},
   {t:"Ar-condicionado", d:"Climatização no quarto para qualquer época."},
@@ -1207,7 +1487,7 @@ const SERV_EN = [
 
 const I18N = {
   es: {
-    nav_hab:"Habitaciones", nav_serv:"Servicios", nav_promos:"Promociones", nav_faq:"Preguntas", nav_cont:"Contacto", nav_reservar:"Reservar",
+    nav_hab:"Habitaciones", nav_serv:"Servicios", nav_promos:"Promociones", nav_op:"Opiniones", nav_faq:"Preguntas", nav_cont:"Contacto", nav_reservar:"Reservar",
     hero_eyebrow:"Chuy · Rocha · Uruguay",
     hero_h1:"Tu lugar en el centro<br>de los <em>comercios</em><br>del Chuy.",
     hero_lead:"Seis habitaciones a 100 metros del centro del Chuy, con los free shops y comercios a pasos. Cada una con aire acondicionado, baño privado y cocina equipada, más estacionamiento privado y parrillero. Atención cercana y el ritmo tranquilo de la costa.",
@@ -1217,18 +1497,18 @@ const I18N = {
     fr_hab:"Habitaciones", fr_centro:"Del centro", fr_at:"Atención", fr_hues:"Huéspedes",
     hab_eye:"Dónde dormir", hab_h2:"Nuestras habitaciones", hab_p:"Cada habitación tiene su nombre y su carácter. Elegí la que mejor se adapte a tu viaje y reservá directo por WhatsApp.",
     hab_nota:"💡 <strong>Tarifa por 1 persona:</strong> $1.700 los días de semana. Los fines de semana se aplica la tarifa de 2 personas. (En Emiliano, 1 persona: $1.300.) Los precios varían según la temporada.",
-    serv_eye:"Todo incluido en tu estadía", serv_h2:"Servicios del hostal", serv_p:"Lo que hace que quedarte en EYO sea fácil y cómodo, desde que llegás hasta que te vas.",
+    serv_eye:"Todo incluido en tu estadía", serv_h2:"Servicios del hostal", serv_p:"Lo que hace que quedarte en Hospedaje Chui sea fácil y cómodo, desde que llegás hasta que te vas.",
     info_eye:"Antes de venir", info_h2:"Información y ubicación", info_p:"Todo lo que necesitás saber para tu estadía en el Chuy.",
     i_datos:"Datos útiles", i_pago:"Medios de pago", i_equip:"Qué incluye tu habitación", i_recep:"Recepción y llegada", i_llegar:"Cómo llegar",
     cont_eye:"Reservá tu lugar", cont_h2:"Hablemos y armamos tu estadía", cont_p:"Completá el formulario o escribinos directo. Te respondemos por WhatsApp con disponibilidad y precios.",
     cont_escribinos:"Escribinos", cont_maps:"Ver en Google Maps",
-    op_eye:"Confianza", op_h2:"Lo que dicen nuestros huéspedes", op_p:"Opiniones reales de huéspedes en Google.",
+    op_eye:"Confianza", op_h2:"Lo que dicen nuestros huéspedes", op_p:"Opiniones reales de huéspedes en Google.", op_count:"Basado en opiniones reales de Google",
     op_google:"Ver opiniones en Google", op_booking:"Ver opiniones en Booking",
     cta1_h:"¿Listo para tu estadía en el Chuy?", cta1_p:"Consultá disponibilidad y precios directo por WhatsApp.", cta_btn:"Consultar por WhatsApp",
-    pr_eye:"Ofertas", pr_h2:"Promociones y estadías especiales", pr_p:"Sujetas a disponibilidad. (Completá los valores; no hay porcentajes cargados.)",
-    pr1_t:"Tarifa especial entre semana", pr1_d:"Mejor precio de domingo a jueves.", pr1_c:"Condiciones: [a completar]. Sujeto a disponibilidad.",
-    pr2_t:"3 noches o más", pr2_d:"Descuento por estadías largas.", pr2_c:"Condiciones: [a completar]. Sujeto a disponibilidad.", pr_btn:"Consultar",
-    ce_eye:"Ubicación", ce_h2:"Descubrí Chuy desde EYO HOSTAL", ce_p:"Todo lo importante del Chuy, a pocos pasos.", ce_foto:"Foto (reemplazar)", ce_vermaps:"Ver en Maps", ce_maps:"Abrir en Google Maps",
+    pr_eye:"Ofertas", pr_h2:"Promociones y estadías especiales", pr_p:"Tarifas especiales según temporada y duración de tu estadía. Consultanos por WhatsApp.",
+    pr1_t:"Tarifa especial entre semana", pr1_d:"Mejor precio de domingo a jueves.", pr1_c:"Consultanos las condiciones vigentes por WhatsApp.",
+    pr2_t:"3 noches o más", pr2_d:"Descuento por estadías largas.", pr2_c:"Consultanos las condiciones vigentes por WhatsApp.", pr_btn:"Consultar",
+    ce_eye:"Ubicación", ce_h2:"Descubrí Chuy desde Hospedaje Chui", ce_p:"Todo lo importante del Chuy, a pocos pasos.", ce_foto:"Foto (reemplazar)", ce_vermaps:"Ver en Maps", ce_maps:"Abrir en Google Maps",
     ce1_t:"Free shops", ce1_d:"Neutral, Six, The Place y más, sobre Av. Brasil.",
     ce2_t:"Avenida principal (Brasil)", ce2_d:"La avenida comercial del Chuy, a metros.",
     ce3_t:"Frontera Uruguay–Brasil", ce3_d:"Cruce entre Chuy (UY) y Chuí (BR), sobre la avenida.",
@@ -1244,15 +1524,17 @@ const I18N = {
     foot_nav:"Navegación", foot_links:"Enlaces", foot_rights:"Todos los derechos reservados",
     wa_float:"WhatsApp",
     r_alt:"Habitación", r_foto:"Foto de la habitación", r_verfotos:"Ver fotos", r_from:"Desde", r_1p:"1 persona", r_pers:"personas", r_upto:"hasta", r_bath:"Baño", r_priv:"privado", r_shared:"compartido", r_night:"noche", r_consultar:"Consultar", r_sujeto:"Sujeto a disponibilidad",
-    wa_room:"Hola EYO HOSTAL! Me interesa la habitación \"{r}\". ¿Tienen disponibilidad?",
-    wa_general:"Hola EYO HOSTAL! Quiero consultar disponibilidad y precios.",
-    wa_promo1:"Hola EYO HOSTAL! Quiero consultar la tarifa especial entre semana.",
-    wa_promo2:"Hola EYO HOSTAL! Quiero consultar el descuento por 3 noches o más.",
-    bus_wa:"Hola EYO HOSTAL! Quiero consultar disponibilidad:\n• Entrada: {in}\n• Salida: {out}\n• Adultos: {ad}\n• Niños: {ni}\n• Habitación: {hab}",
+    res_sin:"Todavía no hay opiniones", res_ver:"Ver opiniones", res_titulo:"Opiniones de {r}", res_op_sing:"opinión", res_op_pl:"opiniones", res_propia:"Calificación del alojamiento",
+    res_muymal:"Muy mal", res_mal:"Mal", res_regular:"Regular", res_bien:"Bien", res_bueno:"Bueno", res_genial:"Genial", res_excelente:"Excelente",
+    wa_room:"Hola Hospedaje Chui! Me interesa la habitación \"{r}\". ¿Tienen disponibilidad?",
+    wa_general:"Hola Hospedaje Chui! Quiero consultar disponibilidad y precios.",
+    wa_promo1:"Hola Hospedaje Chui! Quiero consultar la tarifa especial entre semana.",
+    wa_promo2:"Hola Hospedaje Chui! Quiero consultar el descuento por 3 noches o más.",
+    bus_wa:"Hola Hospedaje Chui! Quiero consultar disponibilidad:\n• Entrada: {in}\n• Salida: {out}\n• Adultos: {ad}\n• Niños: {ni}\n• Habitación: {hab}",
     err_nombre:"Por favor, escribí tu nombre.", err_fechas:"La fecha de salida debe ser posterior a la de llegada."
   },
   pt: {
-    nav_hab:"Quartos", nav_serv:"Serviços", nav_promos:"Promoções", nav_faq:"Perguntas", nav_cont:"Contato", nav_reservar:"Reservar",
+    nav_hab:"Quartos", nav_serv:"Serviços", nav_promos:"Promoções", nav_op:"Avaliações", nav_faq:"Perguntas", nav_cont:"Contato", nav_reservar:"Reservar",
     hero_eyebrow:"Chuí · Rocha · Uruguai",
     hero_h1:"Seu lugar no centro<br>dos <em>comércios</em><br>do Chuí.",
     hero_lead:"Seis quartos a 100 metros do centro do Chuí, com os free shops e comércios a poucos passos. Cada um com ar-condicionado, banheiro privativo e cozinha equipada, além de estacionamento privado e churrasqueira. Atendimento próximo e o ritmo tranquilo da costa.",
@@ -1262,18 +1544,18 @@ const I18N = {
     fr_hab:"Quartos", fr_centro:"Do centro", fr_at:"Atendimento", fr_hues:"Hóspedes",
     hab_eye:"Onde dormir", hab_h2:"Nossos quartos", hab_p:"Cada quarto tem seu nome e seu estilo. Escolha o que melhor combina com sua viagem e reserve direto pelo WhatsApp.",
     hab_nota:"💡 <strong>Tarifa para 1 pessoa:</strong> $1.700 nos dias de semana. Nos fins de semana aplica-se a tarifa de 2 pessoas. (No Emiliano, 1 pessoa: $1.300.) Os preços variam conforme a temporada.",
-    serv_eye:"Tudo incluído na sua estadia", serv_h2:"Serviços do hostal", serv_p:"O que torna sua estadia no EYO fácil e confortável, da chegada à saída.",
+    serv_eye:"Tudo incluído na sua estadia", serv_h2:"Serviços do hostal", serv_p:"O que torna sua estadia no Hospedaje Chui fácil e confortável, da chegada à saída.",
     info_eye:"Antes de vir", info_h2:"Informações e localização", info_p:"Tudo o que você precisa saber para sua estadia no Chuí.",
     i_datos:"Informações úteis", i_pago:"Formas de pagamento", i_equip:"O que inclui seu quarto", i_recep:"Recepção e chegada", i_llegar:"Como chegar",
     cont_eye:"Reserve seu lugar", cont_h2:"Vamos conversar e organizar sua estadia", cont_p:"Preencha o formulário ou fale com a gente direto. Respondemos pelo WhatsApp com disponibilidade e preços.",
     cont_escribinos:"Fale com a gente", cont_maps:"Ver no Google Maps",
-    op_eye:"Confiança", op_h2:"O que dizem nossos hóspedes", op_p:"Avaliações reais de hóspedes no Google.",
+    op_eye:"Confiança", op_h2:"O que dizem nossos hóspedes", op_p:"Avaliações reais de hóspedes no Google.", op_count:"Com base em avaliações reais do Google",
     op_google:"Ver avaliações no Google", op_booking:"Ver avaliações no Booking",
     cta1_h:"Pronto para sua estadia no Chuí?", cta1_p:"Consulte disponibilidade e preços direto pelo WhatsApp.", cta_btn:"Consultar pelo WhatsApp",
-    pr_eye:"Ofertas", pr_h2:"Promoções e estadias especiais", pr_p:"Sujeitas a disponibilidade. (Complete os valores; não há porcentagens carregadas.)",
-    pr1_t:"Tarifa especial em dias de semana", pr1_d:"Melhor preço de domingo a quinta.", pr1_c:"Condições: [a completar]. Sujeito a disponibilidade.",
-    pr2_t:"3 noites ou mais", pr2_d:"Desconto para estadias longas.", pr2_c:"Condições: [a completar]. Sujeito a disponibilidade.", pr_btn:"Consultar",
-    ce_eye:"Localização", ce_h2:"Descubra o Chuí a partir do EYO HOSTAL", ce_p:"Tudo o que importa no Chuí, a poucos passos.", ce_foto:"Foto (substituir)", ce_vermaps:"Ver no Maps", ce_maps:"Abrir no Google Maps",
+    pr_eye:"Ofertas", pr_h2:"Promoções e estadias especiais", pr_p:"Tarifas especiais conforme a temporada e a duração da sua estadia. Consulte pelo WhatsApp.",
+    pr1_t:"Tarifa especial em dias de semana", pr1_d:"Melhor preço de domingo a quinta.", pr1_c:"Consulte as condições vigentes pelo WhatsApp.",
+    pr2_t:"3 noites ou mais", pr2_d:"Desconto para estadias longas.", pr2_c:"Consulte as condições vigentes pelo WhatsApp.", pr_btn:"Consultar",
+    ce_eye:"Localização", ce_h2:"Descubra o Chuí a partir do Hospedaje Chui", ce_p:"Tudo o que importa no Chuí, a poucos passos.", ce_foto:"Foto (substituir)", ce_vermaps:"Ver no Maps", ce_maps:"Abrir no Google Maps",
     ce1_t:"Free shops", ce1_d:"Neutral, Six, The Place e mais, na Av. Brasil.",
     ce2_t:"Avenida principal (Brasil)", ce2_d:"A avenida comercial do Chuí, a metros.",
     ce3_t:"Fronteira Uruguai–Brasil", ce3_d:"Cruzamento entre Chuy (UY) e Chuí (BR), na avenida.",
@@ -1289,15 +1571,17 @@ const I18N = {
     foot_nav:"Navegação", foot_links:"Links", foot_rights:"Todos os direitos reservados",
     wa_float:"WhatsApp",
     r_alt:"Quarto", r_foto:"Foto do quarto", r_verfotos:"Ver fotos", r_from:"A partir de", r_1p:"1 pessoa", r_pers:"pessoas", r_upto:"até", r_bath:"Banheiro", r_priv:"privativo", r_shared:"compartilhado", r_night:"noite", r_consultar:"Consultar", r_sujeto:"Sujeito a disponibilidade",
-    wa_room:"Olá EYO HOSTAL! Tenho interesse no quarto \"{r}\". Têm disponibilidade?",
-    wa_general:"Olá EYO HOSTAL! Quero consultar disponibilidade e preços.",
-    wa_promo1:"Olá EYO HOSTAL! Quero consultar a tarifa especial em dias de semana.",
-    wa_promo2:"Olá EYO HOSTAL! Quero consultar o desconto por 3 noites ou mais.",
-    bus_wa:"Olá EYO HOSTAL! Quero consultar disponibilidade:\n• Entrada: {in}\n• Saída: {out}\n• Adultos: {ad}\n• Crianças: {ni}\n• Quarto: {hab}",
+    res_sin:"Ainda não há avaliações", res_ver:"Ver avaliações", res_titulo:"Avaliações de {r}", res_op_sing:"avaliação", res_op_pl:"avaliações", res_propia:"Avaliação do alojamento",
+    res_muymal:"Muito ruim", res_mal:"Ruim", res_regular:"Regular", res_bien:"Bom", res_bueno:"Muito bom", res_genial:"Ótimo", res_excelente:"Excelente",
+    wa_room:"Olá Hospedaje Chui! Tenho interesse no quarto \"{r}\". Têm disponibilidade?",
+    wa_general:"Olá Hospedaje Chui! Quero consultar disponibilidade e preços.",
+    wa_promo1:"Olá Hospedaje Chui! Quero consultar a tarifa especial em dias de semana.",
+    wa_promo2:"Olá Hospedaje Chui! Quero consultar o desconto por 3 noites ou mais.",
+    bus_wa:"Olá Hospedaje Chui! Quero consultar disponibilidade:\n• Entrada: {in}\n• Saída: {out}\n• Adultos: {ad}\n• Crianças: {ni}\n• Quarto: {hab}",
     err_nombre:"Por favor, escreva seu nome.", err_fechas:"A data de saída deve ser posterior à de chegada."
   },
   en: {
-    nav_hab:"Rooms", nav_serv:"Services", nav_promos:"Deals", nav_faq:"FAQ", nav_cont:"Contact", nav_reservar:"Book",
+    nav_hab:"Rooms", nav_serv:"Services", nav_promos:"Deals", nav_op:"Reviews", nav_faq:"FAQ", nav_cont:"Contact", nav_reservar:"Book",
     hero_eyebrow:"Chuy · Rocha · Uruguay",
     hero_h1:"Your place in the heart<br>of Chuy's <em>shops</em>.",
     hero_lead:"Six rooms 100 meters from downtown Chuy, with the duty-free shops and stores just steps away. Each with air conditioning, a private bathroom and an equipped kitchen, plus private parking and a barbecue. Friendly service and the calm pace of the coast.",
@@ -1307,18 +1591,18 @@ const I18N = {
     fr_hab:"Rooms", fr_centro:"From downtown", fr_at:"Service", fr_hues:"Guests",
     hab_eye:"Where to sleep", hab_h2:"Our rooms", hab_p:"Each room has its own name and character. Pick the one that best fits your trip and book directly on WhatsApp.",
     hab_nota:"💡 <strong>1-person rate:</strong> $1,700 on weekdays. On weekends the 2-person rate applies. (In Emiliano, 1 person: $1,300.) Prices vary by season.",
-    serv_eye:"Everything included in your stay", serv_h2:"Hostel services", serv_p:"What makes staying at EYO easy and comfortable, from arrival to departure.",
+    serv_eye:"Everything included in your stay", serv_h2:"Hostel services", serv_p:"What makes staying at Hospedaje Chui easy and comfortable, from arrival to departure.",
     info_eye:"Before you come", info_h2:"Information & location", info_p:"Everything you need to know for your stay in Chuy.",
     i_datos:"Useful info", i_pago:"Payment methods", i_equip:"What your room includes", i_recep:"Reception & arrival", i_llegar:"How to get there",
     cont_eye:"Book your spot", cont_h2:"Let's talk and set up your stay", cont_p:"Fill in the form or message us directly. We reply on WhatsApp with availability and prices.",
     cont_escribinos:"Message us", cont_maps:"View on Google Maps",
-    op_eye:"Trust", op_h2:"What our guests say", op_p:"Real guest reviews from Google.",
+    op_eye:"Trust", op_h2:"What our guests say", op_p:"Real guest reviews from Google.", op_count:"Based on real Google reviews",
     op_google:"See reviews on Google", op_booking:"See reviews on Booking",
     cta1_h:"Ready for your stay in Chuy?", cta1_p:"Check availability and prices directly on WhatsApp.", cta_btn:"Ask on WhatsApp",
-    pr_eye:"Deals", pr_h2:"Deals & special stays", pr_p:"Subject to availability. (Fill in the values; no percentages are set.)",
-    pr1_t:"Special weekday rate", pr1_d:"Best price from Sunday to Thursday.", pr1_c:"Conditions: [to complete]. Subject to availability.",
-    pr2_t:"3 nights or more", pr2_d:"Discount for longer stays.", pr2_c:"Conditions: [to complete]. Subject to availability.", pr_btn:"Ask",
-    ce_eye:"Location", ce_h2:"Discover Chuy from EYO HOSTAL", ce_p:"Everything that matters in Chuy, just steps away.", ce_foto:"Photo (replace)", ce_vermaps:"View on Maps", ce_maps:"Open in Google Maps",
+    pr_eye:"Deals", pr_h2:"Deals & special stays", pr_p:"Special rates depending on season and length of stay. Ask us on WhatsApp.",
+    pr1_t:"Special weekday rate", pr1_d:"Best price from Sunday to Thursday.", pr1_c:"Ask us about current conditions on WhatsApp.",
+    pr2_t:"3 nights or more", pr2_d:"Discount for longer stays.", pr2_c:"Ask us about current conditions on WhatsApp.", pr_btn:"Ask",
+    ce_eye:"Location", ce_h2:"Discover Chuy from Hospedaje Chui", ce_p:"Everything that matters in Chuy, just steps away.", ce_foto:"Photo (replace)", ce_vermaps:"View on Maps", ce_maps:"Open in Google Maps",
     ce1_t:"Duty-free shops", ce1_d:"Neutral, Six, The Place and more, along Av. Brasil.",
     ce2_t:"Main avenue (Brasil)", ce2_d:"Chuy's shopping avenue, just meters away.",
     ce3_t:"Uruguay–Brazil border", ce3_d:"Crossing between Chuy (UY) and Chuí (BR), on the avenue.",
@@ -1334,11 +1618,13 @@ const I18N = {
     foot_nav:"Navigation", foot_links:"Links", foot_rights:"All rights reserved",
     wa_float:"WhatsApp",
     r_alt:"Room", r_foto:"Room photo", r_verfotos:"View photos", r_from:"From", r_1p:"1 person", r_pers:"people", r_upto:"up to", r_bath:"Bathroom", r_priv:"private", r_shared:"shared", r_night:"night", r_consultar:"Ask about", r_sujeto:"Subject to availability",
-    wa_room:"Hello EYO HOSTAL! I'm interested in the \"{r}\" room. Do you have availability?",
-    wa_general:"Hello EYO HOSTAL! I'd like to check availability and prices.",
-    wa_promo1:"Hello EYO HOSTAL! I'd like to ask about the special weekday rate.",
-    wa_promo2:"Hello EYO HOSTAL! I'd like to ask about the 3+ nights discount.",
-    bus_wa:"Hello EYO HOSTAL! I'd like to check availability:\n• Check-in: {in}\n• Check-out: {out}\n• Adults: {ad}\n• Children: {ni}\n• Room: {hab}",
+    res_sin:"No reviews yet", res_ver:"See reviews", res_titulo:"Reviews of {r}", res_op_sing:"review", res_op_pl:"reviews", res_propia:"Property's own rating",
+    res_muymal:"Very bad", res_mal:"Bad", res_regular:"Average", res_bien:"Good", res_bueno:"Very good", res_genial:"Great", res_excelente:"Excellent",
+    wa_room:"Hello Hospedaje Chui! I'm interested in the \"{r}\" room. Do you have availability?",
+    wa_general:"Hello Hospedaje Chui! I'd like to check availability and prices.",
+    wa_promo1:"Hello Hospedaje Chui! I'd like to ask about the special weekday rate.",
+    wa_promo2:"Hello Hospedaje Chui! I'd like to ask about the 3+ nights discount.",
+    bus_wa:"Hello Hospedaje Chui! I'd like to check availability:\n• Check-in: {in}\n• Check-out: {out}\n• Adults: {ad}\n• Children: {ni}\n• Room: {hab}",
     err_nombre:"Please enter your name.", err_fechas:"Check-out must be after check-in."
   }
 };
@@ -1350,7 +1636,7 @@ const FAQ = [
   {q:{es:"¿Qué medios de pago aceptan?",pt:"Quais formas de pagamento aceitam?",en:"What payment methods do you accept?"}, a:{es:"Efectivo, POS y transferencia bancaria. Se aceptan pesos uruguayos, dólares y reales (conversión con el dólar venta).",pt:"Dinheiro, cartão (POS) e transferência bancária. Aceitamos pesos uruguaios, dólares e reais (conversão pelo dólar venda).",en:"Cash, card (POS) and bank transfer. We accept Uruguayan pesos, US dollars and Brazilian reais (converted at the sell dollar rate)."}},
   {q:{es:"¿Cuál es el horario de entrada y salida?",pt:"Qual é o horário de entrada e saída?",en:"What are the check-in and check-out times?"}, a:{es:"Check-in desde las 11:00 y check-out hasta las 10:00.",pt:"Check-in a partir das 11:00 e check-out até as 10:00.",en:"Check-in from 11:00 and check-out until 10:00."}},
   {q:{es:"¿Puedo llegar fuera de horario?",pt:"Posso chegar fora do horário?",en:"Can I arrive outside those hours?"}, a:{es:"Coordinándolo antes por WhatsApp. Al llegar te recibe Elsa (la dueña) o Ana.",pt:"Combinando antes pelo WhatsApp. Na chegada, Elsa (a dona) ou Ana recebem você.",en:"Yes, arranging it beforehand on WhatsApp. On arrival, Elsa (the owner) or Ana welcome you."}},
-  {q:{es:"¿Las habitaciones tienen baño privado y aire acondicionado?",pt:"Os quartos têm banheiro privativo e ar-condicionado?",en:"Do rooms have a private bathroom and air conditioning?"}, a:{es:"Sí, todas tienen aire acondicionado y baño privado (excepto Emiliano, que es compartido).",pt:"Sim, todos têm ar-condicionado e banheiro privativo (exceto o Emiliano, que é compartilhado).",en:"Yes, all have air conditioning and a private bathroom (except Emiliano, which is shared)."}},
+  {q:{es:"¿Las habitaciones tienen baño privado y aire acondicionado?",pt:"Os quartos têm banheiro privativo e ar-condicionado?",en:"Do rooms have a private bathroom and air conditioning?"}, a:{es:"Todas tienen baño privado. Aire acondicionado tienen todas excepto Emiliano.",pt:"Todos têm banheiro privativo. Ar-condicionado têm todos, exceto o Emiliano.",en:"All rooms have a private bathroom. All have air conditioning except Emiliano."}},
   {q:{es:"¿Hay estacionamiento?",pt:"Tem estacionamento?",en:"Is there parking?"}, a:{es:"Sí, estacionamiento privado dentro del predio, incluido en el precio.",pt:"Sim, estacionamento privado dentro do terreno, incluído no preço.",en:"Yes, private parking inside the property, included in the price."}},
   {q:{es:"¿Se puede fumar? ¿Aceptan mascotas?",pt:"Pode fumar? Aceitam animais?",en:"Can I smoke? Are pets allowed?"}, a:{es:"No se fuma dentro de las habitaciones (sí está permitido afuera). Se aceptan mascotas.",pt:"Não se fuma dentro dos quartos (é permitido fora). Animais são aceitos.",en:"No smoking inside the rooms (allowed outside). Pets are welcome."}},
   {q:{es:"¿Piden seña? ¿Política de cancelación?",pt:"Pedem sinal? Política de cancelamento?",en:"Do you require a deposit? Cancellation policy?"}, a:{es:"No se pide seña para reservar. Cancelaciones hasta 1 día antes.",pt:"Não é preciso sinal para reservar. Cancelamentos até 1 dia antes.",en:"No deposit is required to book. Cancellations up to 1 day before."}},
