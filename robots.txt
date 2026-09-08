@@ -1,4 +1,4 @@
-# Hospedaje Chui -- https://manuelfestaori-star.github.io/webeyo/
+# Hospedaje Chui -- https://webdelhotelcom.github.io/hospedaje-chui/
 # No existían restricciones previas en este sitio (robots.txt devolvía 404
 # antes de este archivo) -- no hay ninguna directiva de otro rastreador que
 # conservar. Todo el contenido de este sitio es público (sin panel privado,
@@ -17,4 +17,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://manuelfestaori-star.github.io/webeyo/sitemap.xml
+Sitemap: https://webdelhotelcom.github.io/hospedaje-chui/sitemap.xml
