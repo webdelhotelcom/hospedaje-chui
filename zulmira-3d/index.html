@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#182734">
+  <title>Zulmira · Explorar en 3D</title>
+  <meta name="description" content="Explorá la maqueta interactiva del interior de Zulmira: dormitorio, estar y baño. Recreación aproximada basada en fotografías.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="./" aria-label="Zulmira, inicio"><span class="monogram">Z</span><span><strong>Zulmira</strong><small>HOSPEDAJE CHUI</small></span></a>
+    <div class="header-right"><span class="badge">INTERIOR EN 3D</span><button id="help" class="icon-button" aria-label="Cómo usar el modelo" title="Cómo usar el modelo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.3 9a2.8 2.8 0 0 1 5.4 1c0 2-2.7 2-2.7 4m0 3h.01"/></svg></button></div>
+  </header>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="Explorar ambientes">
+      <div class="sidebar-heading"><span class="eyebrow">TU VISITA</span><h1>Conocé el espacio.</h1></div>
+      <nav class="view-list" aria-label="Vistas del modelo">
+        <button class="view-card active" data-view="general" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 5v9l9 5 9-5V8M12 13v9"/></svg><span>Vista general<small>La maqueta completa</small></span><span class="view-num">01</span></button>
+        <button class="view-card" data-view="bed" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M3 19V8m18 11V8M3 16h18M4 11h16v5H4zm2 0V7h5v4m2 0V7h5v4"/></svg><span>Dormitorio<small>Cama y detalles</small></span><span class="view-num">02</span></button>
+        <button class="view-card" data-view="living" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 11V6h14v5M3 10h3v5h12v-5h3v9H3zm2 9v2m14-2v2"/></svg><span>Estar y barra<small>Un ambiente compartido</small></span><span class="view-num">03</span></button>
+        <button class="view-card" data-view="bath" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 10V5a3 3 0 0 1 6 0m-2 1h4M3 13h18l-2 6H5l-2-6Zm3 6v2m12-2v2M9 9h.01M11 10h.01M13 9h.01"/></svg><span>Baño<small>Distribución y equipamiento</small></span><span class="view-num">04</span></button>
+      </nav>
+      <div class="photo-section"><div class="section-title">Las fotos reales <span>04</span></div><div class="photos">
+        <button data-photo="dormitorio" aria-label="Ver fotografía del dormitorio"><img src="./assets/dormitorio.jpg" alt="Cama con cabecera floral y paredes de madera" loading="lazy"></button>
+        <button data-photo="estar" aria-label="Ver fotografía del estar"><img src="./assets/estar.jpg" alt="Sofá gris y mesa de madera" loading="lazy"></button>
+        <button data-photo="barra" aria-label="Ver fotografía de la barra"><img src="./assets/barra.jpg" alt="Barra negra con banquetas" loading="lazy"></button>
+        <button data-photo="bano" aria-label="Ver fotografía del baño"><img src="./assets/bano.jpg" alt="Baño con azulejos decorados" loading="lazy"></button>
+      </div></div>
+      <div class="model-note"><span class="note-icon">i</span><p>Recreación basada en fotos.<br>Medidas y zonas ocultas estimadas.</p></div>
+    </aside>
+    <section class="stage" aria-label="Modelo 3D interactivo de Zulmira">
+      <div id="viewport" tabindex="0" role="application" aria-label="Maqueta 3D. Arrastrá para girar. Usá la rueda para acercar o los controles inferiores."></div>
+      <div class="stage-top"><div class="view-label"><span class="mini-cube">◇</span><span id="view-label">Vista general</span></div><div class="toggles"><button id="walls" class="toggle on" aria-pressed="true">Paredes abiertas</button><button id="roof" class="toggle" aria-pressed="false">Mostrar techo</button></div></div>
+      <div id="loading" class="loading"><div class="loader"></div><strong>Preparando Zulmira…</strong><span>Cargando el modelo 3D</span></div>
+      <div id="error" class="error" hidden><strong>No se pudo abrir el modelo.</strong><p>Probá actualizar la página o abrirla con un navegador que admita WebGL.</p><button onclick="location.reload()">Volver a intentar</button></div>
+      <div class="stage-bottom"><div class="gesture"><svg viewBox="0 0 24 24"><path d="M8 13V6a2 2 0 0 1 4 0v6m0-3 6 2v7l-4 4H9l-5-7a2 2 0 0 1 3-2l1 1"/></svg><span>Arrastrá para girar<span class="desktop-hint"> · Rueda para acercar</span></span></div>
+        <div class="tools"><button id="rotate" class="icon-button" aria-label="Activar giro automático" aria-pressed="false" title="Giro automático"><svg viewBox="0 0 24 24"><path d="M20 8a9 9 0 1 0 1 6M20 3v5h-5"/></svg></button><span class="tool-divider"></span><button id="zoom-in" class="icon-button" aria-label="Acercar" title="Acercar"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg></button><button id="zoom-out" class="icon-button" aria-label="Alejar" title="Alejar"><svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button><span class="tool-divider"></span><button id="top" class="icon-button" aria-label="Ver desde arriba" title="Ver desde arriba"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h10v10m0-6h6"/></svg></button><button id="reset" class="icon-button" aria-label="Restablecer vista" title="Restablecer vista"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8M6 9v11h12V9m-8 11v-7h4v7"/></svg></button><button id="fullscreen" class="icon-button" aria-label="Pantalla completa" title="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><span>Zulmira <span class="footer-separator">/</span> Visita interactiva</span><a href="./assets/zulmira.glb" download="Zulmira-modelo-3D.glb">Descargar modelo 3D <svg viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg></a></footer>
+  <dialog id="photo-dialog"><button class="dialog-close icon-button" aria-label="Cerrar fotografía"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></svg></button><img id="large-photo" alt=""><p id="photo-caption"></p></dialog>
+  <dialog id="help-dialog"><button class="dialog-close icon-button" aria-label="Cerrar ayuda"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M5 19 19 5"/></svg></button><span class="eyebrow">EXPLORÁ A TU RITMO</span><h2>Cómo recorrer Zulmira</h2><p><b>Girar:</b> arrastrá con un dedo o el mouse.</p><p><b>Acercar:</b> separá dos dedos, usá la rueda o los botones + y −.</p><p><b>Mover:</b> arrastrá con dos dedos o con el botón derecho del mouse.</p><p><b>Elegir un ambiente:</b> usá Dormitorio, Estar y barra o Baño.</p><p class="help-note">La maqueta reproduce los elementos visibles en las fotos. La escala, el techo completo y las zonas ocultas son aproximados.</p></dialog>
+  <noscript>Activá JavaScript para explorar el modelo 3D de Zulmira.</noscript>
+  <script type="module" src="./main.js"></script>
+</body></html>

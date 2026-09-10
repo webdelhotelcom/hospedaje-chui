@@ -285,6 +285,51 @@
   }
   .ver-fotos:hover{background:#fff;transform:translateY(-1px)}
 
+  /* ---------- VISOR 3D ---------- */
+  /* Botón secundario: comparte la forma del CTA de WhatsApp pero en versión
+     contorneada, para que nunca le compita al "Consultar" (que es el que
+     realmente convierte). El margin-top:auto se lo lleva este botón cuando
+     existe, así el par 3D + Consultar queda pegado al pie de la tarjeta. */
+  .room-3d{
+    margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    background:var(--arena);color:var(--verde-profundo);border:1.5px solid var(--verde);
+    padding:.68rem;border-radius:10px;font-family:inherit;font-weight:600;font-size:.9rem;
+    cursor:pointer;transition:background .2s,border-color .2s,transform .2s
+  }
+  .room-3d svg{width:17px;height:17px;fill:none;stroke:var(--oro);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .room-3d:hover{background:var(--mint);border-color:var(--verde-profundo);transform:translateY(-1px)}
+  .room-3d + .room-reservar{margin-top:.5rem}
+  .room-3d-tag{
+    position:absolute;top:.9rem;right:.9rem;z-index:3;
+    background:var(--oro);color:#fff;border-radius:999px;padding:.2rem .55rem;
+    font-size:.7rem;font-weight:700;letter-spacing:.06em;box-shadow:0 4px 14px -4px rgba(0,0,0,.45)
+  }
+  /* Mismo velo que la galería de fotos (.94): con menos opacidad la barra de
+     navegación clara del sitio se transparentaba justo detrás del título. */
+  .tour-modal{position:fixed;inset:0;z-index:110;background:rgba(8,30,18,.94);display:none;flex-direction:column;padding:1rem}
+  .tour-modal.open{display:flex}
+  .tour-top{display:flex;justify-content:space-between;align-items:center;gap:.8rem;color:#fff;padding:.2rem .1rem .7rem}
+  .tour-title{font-size:1rem;font-weight:700;letter-spacing:.01em}
+  .tour-title small{display:block;font-weight:400;font-size:.76rem;opacity:.75;letter-spacing:0}
+  .tour-actions{display:flex;align-items:center;gap:.7rem;flex:0 0 auto}
+  .tour-open{
+    color:#fff;text-decoration:none;font-size:.8rem;font-weight:600;
+    border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:.35rem .8rem;transition:background .2s
+  }
+  .tour-open:hover{background:rgba(255,255,255,.16)}
+  .tour-close{background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;line-height:1;padding:0 .4rem}
+  .tour-frame{flex:1;min-height:0;background:#182734;border-radius:14px;overflow:hidden}
+  .tour-frame iframe{width:100%;height:100%;border:0;display:block}
+  @media(max-width:600px){
+    .tour-modal{padding:.6rem}
+    .tour-title{font-size:.9rem}
+    /* La aclaración de "maqueta aproximada" NO se oculta en celular: adentro
+       del visor esa misma nota queda abajo de todo y hay que scrollear para
+       verla, así que el encabezado es el único lugar donde se lee siempre. */
+    .tour-title small{font-size:.7rem;line-height:1.35}
+    .tour-open{font-size:.74rem;padding:.3rem .65rem}
+  }
+
   /* ---------- CALIFICACIÓN POR HABITACIÓN (0-10 estrellitas) ---------- */
   .rating-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.9rem}
   .rating-stars{color:var(--niebla);opacity:.35;font-size:.85rem;letter-spacing:.03em;white-space:nowrap}
@@ -540,7 +585,7 @@
       <li><strong>Grande</strong> — hasta 3 personas, desde $1.850 la noche, baño privado.</li>
       <li><strong>Medio</strong> — hasta 2 personas, desde $1.850 la noche, baño privado.</li>
       <li><strong>Nueva</strong> — hasta 3 personas, desde $1.850 la noche, baño privado.</li>
-      <li><strong>Zulmira</strong> — hasta 4 personas, desde $1.850 la noche, baño privado (se accede subiendo una escalera).</li>
+      <li><strong>Zulmira</strong> — hasta 4 personas, desde $1.850 la noche, baño privado (se accede subiendo una escalera). <a href="zulmira-3d/">Ver el interior en 3D</a> — maqueta aproximada hecha a partir de las fotos reales.</li>
       <li><strong>Emiliano</strong> — hasta 2 personas, desde $1.300 la noche, baño privado, sin aire acondicionado.</li>
     </ul>
     <h2>Servicios</h2>
@@ -570,6 +615,27 @@
     <button class="lb-nav" onclick="navGaleria(1)" aria-label="Siguiente">›</button>
   </div>
   <div class="lb-thumbs" id="lbThumbs"></div>
+</div>
+
+<!-- MODAL DEL VISOR 3D -->
+<!-- El iframe nace SIN src a propósito: la maqueta pesa ~6 MB entre modelo y
+     texturas, así que solo se carga cuando el visitante toca "Ver en 3D".
+     Cargarla en cada visita gastaría datos de celular sin que nadie la pida. -->
+<div class="tour-modal" id="tourModal" role="dialog" aria-modal="true" aria-label="Visita en 3D">
+  <div class="tour-top">
+    <span class="tour-title" id="tourTitulo"></span>
+    <span class="tour-actions">
+      <a class="tour-open" id="tourOpen" href="#" target="_blank" rel="noopener" data-i18n="r_ver3d_full">Pantalla completa ↗</a>
+      <button class="tour-close" onclick="cerrarTour3D()" aria-label="Cerrar visita en 3D">×</button>
+    </span>
+  </div>
+  <div class="tour-frame">
+    <!-- Sin loading="lazy" a propósito: el iframe nace sin src, así que no hay
+         nada que diferir, y con lazy el navegador ignora el src que se le
+         asigna mientras el modal todavía está en display:none (se quedaba en
+         about:blank y el visor nunca aparecía). -->
+    <iframe id="tourFrame" title="Maqueta 3D del interior" allow="fullscreen" allowfullscreen></iframe>
+  </div>
 </div>
 
 <!-- MODAL DE OPINIONES POR HABITACIÓN -->
@@ -1142,6 +1208,10 @@ const HABITACIONES = [
     tarifas:[ {personas:2, desde:1850, hasta:2130}, {personas:3, desde:2000, hasta:2250}, {personas:4, desde:2250, hasta:2450} ],
     calificacionPropia:8.5,
     aviso:"Se accede subiendo una escalera",
+    // Maqueta 3D del interior (carpeta zulmira-3d/). Es una recreación
+    // aproximada hecha a partir de las fotos reales, no un escaneo -- por eso
+    // el modal lo aclara abajo del visor.
+    tour3d:"zulmira-3d/",
     extras:[],
     fotos:[
       "fotos/img-053.jpg",
@@ -1297,10 +1367,21 @@ function renderRooms(){
   const banoTxt = t('r_bath') + " " + (h.bano === 'privado' ? t('r_priv') : t('r_shared'));
   const msg = encodeURIComponent(t('wa_room').replace('{r}', h.nombre));
 
+  // Botón del visor 3D -- solo aparece en las habitaciones que tengan
+  // "tour3d" cargado, el resto de las tarjetas queda exactamente igual.
+  const btn3d = h.tour3d
+    ? `<button class="room-3d" onclick="abrirTour3D(${idx})" aria-label="${t('r_ver3d')} «${h.nombre}»">
+         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 5v9l9 5 9-5V8M12 13v9"/></svg>
+         ${t('r_ver3d')}
+       </button>`
+    : "";
+  const tag3d = h.tour3d ? `<span class="room-3d-tag">3D</span>` : "";
+
   grid.insertAdjacentHTML("beforeend", `
     <article class="room">
       <div class="room-photo">
         <span class="room-tag">${h.nombre}</span>
+        ${tag3d}
         ${btnFotos}
         ${foto}
       </div>
@@ -1316,6 +1397,7 @@ function renderRooms(){
           <span class="spec">🚿 ${banoTxt}</span>
         </div>
         <div class="amen-tags">${amen}</div>
+        ${btn3d}
         <a class="room-reservar" href="${waBase}${msg}" target="_blank" rel="noopener">${t('r_consultar')} «${h.nombre}» →</a>
         <div class="disp">${t('r_sujeto')}</div>
       </div>
@@ -1395,6 +1477,35 @@ function abrirResenas(roomIdx){
     : `<p class="rating-empty">${t('res_sin')}</p>`;
   resModal.classList.add("open"); document.body.style.overflow="hidden";
 }
+// ---------- Visita 3D (maqueta del interior) ----------
+const tourModal = document.getElementById("tourModal");
+const tourFrame = document.getElementById("tourFrame");
+function abrirTour3D(roomIdx){
+  const h = HABITACIONES[roomIdx];
+  if(!h || !h.tour3d) return;
+  document.getElementById("tourTitulo").innerHTML =
+    `${h.nombre} — ${t('r_ver3d')}<small>${t('r_ver3d_nota')}</small>`;
+  document.getElementById("tourOpen").href = h.tour3d;
+  tourModal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  // El src se asigna DESPUÉS de abrir el modal: con el contenedor todavía en
+  // display:none el iframe no tiene tamaño y el visor arrancaría con un canvas
+  // de 0px (y con loading="lazy" ni siquiera llegaba a cargar).
+  tourFrame.src = h.tour3d + "?embed=1";
+}
+function cerrarTour3D(){
+  tourModal.classList.remove("open");
+  document.body.style.overflow="";
+  // Descargar el iframe no es solo prolijidad: con el modal en display:none el
+  // navegador SIGUE ejecutando el requestAnimationFrame del visor (medido: 52
+  // frames en un segundo con el modal ya cerrado), o sea que la maqueta se
+  // renderiza invisible gastando batería y reteniendo un contexto WebGL. Al
+  // reabrir se reinicia desde la caché del navegador, sin volver a descargar.
+  tourFrame.removeAttribute("src");
+}
+tourModal.addEventListener("click", e=>{ if(e.target===tourModal) cerrarTour3D(); });
+document.addEventListener("keydown", e=>{ if(tourModal.classList.contains("open") && e.key==="Escape") cerrarTour3D(); });
+
 function cerrarResenas(){ resModal.classList.remove("open"); document.body.style.overflow=""; }
 resModal.addEventListener("click", e=>{ if(e.target===resModal) cerrarResenas(); });
 document.addEventListener("keydown", e=>{ if(resModal.classList.contains("open") && e.key==="Escape") cerrarResenas(); });
@@ -1524,6 +1635,7 @@ const I18N = {
     foot_nav:"Navegación", foot_links:"Enlaces", foot_rights:"Todos los derechos reservados",
     wa_float:"WhatsApp",
     r_alt:"Habitación", r_foto:"Foto de la habitación", r_verfotos:"Ver fotos", r_from:"Desde", r_1p:"1 persona", r_pers:"personas", r_upto:"hasta", r_bath:"Baño", r_priv:"privado", r_shared:"compartido", r_night:"noche", r_consultar:"Consultar", r_sujeto:"Sujeto a disponibilidad",
+    r_ver3d:"Ver en 3D", r_ver3d_full:"Pantalla completa ↗", r_ver3d_nota:"Maqueta aproximada hecha a partir de las fotos reales",
     res_sin:"Todavía no hay opiniones", res_ver:"Ver opiniones", res_titulo:"Opiniones de {r}", res_op_sing:"opinión", res_op_pl:"opiniones", res_propia:"Calificación del alojamiento",
     res_muymal:"Muy mal", res_mal:"Mal", res_regular:"Regular", res_bien:"Bien", res_bueno:"Bueno", res_genial:"Genial", res_excelente:"Excelente",
     wa_room:"Hola Hospedaje Chui! Me interesa la habitación \"{r}\". ¿Tienen disponibilidad?",
@@ -1571,6 +1683,7 @@ const I18N = {
     foot_nav:"Navegação", foot_links:"Links", foot_rights:"Todos os direitos reservados",
     wa_float:"WhatsApp",
     r_alt:"Quarto", r_foto:"Foto do quarto", r_verfotos:"Ver fotos", r_from:"A partir de", r_1p:"1 pessoa", r_pers:"pessoas", r_upto:"até", r_bath:"Banheiro", r_priv:"privativo", r_shared:"compartilhado", r_night:"noite", r_consultar:"Consultar", r_sujeto:"Sujeito a disponibilidade",
+    r_ver3d:"Ver em 3D", r_ver3d_full:"Tela cheia ↗", r_ver3d_nota:"Maquete aproximada feita a partir das fotos reais",
     res_sin:"Ainda não há avaliações", res_ver:"Ver avaliações", res_titulo:"Avaliações de {r}", res_op_sing:"avaliação", res_op_pl:"avaliações", res_propia:"Avaliação do alojamento",
     res_muymal:"Muito ruim", res_mal:"Ruim", res_regular:"Regular", res_bien:"Bom", res_bueno:"Muito bom", res_genial:"Ótimo", res_excelente:"Excelente",
     wa_room:"Olá Hospedaje Chui! Tenho interesse no quarto \"{r}\". Têm disponibilidade?",
@@ -1618,6 +1731,7 @@ const I18N = {
     foot_nav:"Navigation", foot_links:"Links", foot_rights:"All rights reserved",
     wa_float:"WhatsApp",
     r_alt:"Room", r_foto:"Room photo", r_verfotos:"View photos", r_from:"From", r_1p:"1 person", r_pers:"people", r_upto:"up to", r_bath:"Bathroom", r_priv:"private", r_shared:"shared", r_night:"night", r_consultar:"Ask about", r_sujeto:"Subject to availability",
+    r_ver3d:"View in 3D", r_ver3d_full:"Full screen ↗", r_ver3d_nota:"Approximate model built from the real photos",
     res_sin:"No reviews yet", res_ver:"See reviews", res_titulo:"Reviews of {r}", res_op_sing:"review", res_op_pl:"reviews", res_propia:"Property's own rating",
     res_muymal:"Very bad", res_mal:"Bad", res_regular:"Average", res_bien:"Good", res_bueno:"Very good", res_genial:"Great", res_excelente:"Excellent",
     wa_room:"Hello Hospedaje Chui! I'm interested in the \"{r}\" room. Do you have availability?",
